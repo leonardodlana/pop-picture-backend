@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.sf.flexjson:flexjson:3.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.flexjson/flexjson/3.0/552444c3572eac3536fd3a2ec24603423845d69b/flexjson-3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.flexjson/flexjson/3.0/e06f324396b26dde90b300d916fb9b81c9965ff3/flexjson-3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

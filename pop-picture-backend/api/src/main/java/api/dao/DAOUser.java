@@ -30,7 +30,9 @@ public interface DAOUser extends DAO<User> {
 
     List<User> selectByIds(Set<Integer> userIds);
 
-    boolean updatePictureNameForUser(int userId, String pictureName);
+    void updateUserPicture(int userId, String pictureName);
 
     User selectByPublicId(String publicId);
+
+    void updateUserName(int userId, String name);
 }

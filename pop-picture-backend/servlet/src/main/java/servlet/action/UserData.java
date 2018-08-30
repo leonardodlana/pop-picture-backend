@@ -36,7 +36,17 @@ public class UserData extends BaseAction {
         int userId = (int) params.get(KEY_USER_ID);
         String pictureName = (String) params.get(KEY_PICTURE_NAME);
 
-        my(DAOUser.class).updatePictureNameForUser(userId, pictureName);
+        my(DAOUser.class).updateUserPicture(userId, pictureName);
+    }
+
+    @SecureAction(isSecure = true)
+    public void update(HttpServletRequest request, Map<String, Object> params, StringBuilder response) {
+        validateParameters(params, response, KEY_NAME);
+
+        int userId = (int) params.get(KEY_USER_ID);
+        String name = (String) params.get(KEY_NAME);
+
+        my(DAOUser.class).updateUserName(userId, name);
     }
 
     public void get(HttpServletRequest request, Map<String, Object> params, StringBuilder response) {

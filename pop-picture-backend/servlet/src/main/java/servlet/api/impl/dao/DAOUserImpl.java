@@ -144,13 +144,24 @@ public class DAOUserImpl extends AbstractDAO<User> implements DAOUser {
     }
 
     @Override
-    public boolean updatePictureNameForUser(int userId, String pictureName) {
+    public void updateUserPicture(int userId, String pictureName) {
         try {
             JdbcTemplate update = newJdbcTemplate();
-            String sql = "UPDATE User SET picture_name=? WHERE user_id=?";
-            return update.update(sql, pictureName, userId) > 0;
-        } catch (DataAccessException e) {
-            return false;
+            String sql = "UPDATE User SET picture_name=? WHERE id=?";
+            update.update(sql, pictureName, userId);
+        } catch (DataAccessException ignored) {
+        } catch (Throwable e1) {
+            throw new DAOException(e1);
+        }
+    }
+
+    @Override
+    public void updateUserName(int userId, String name) {
+        try {
+            JdbcTemplate update = newJdbcTemplate();
+            String sql = "UPDATE User SET name=? WHERE id=?";
+            update.update(sql, name, userId);
+        } catch (DataAccessException ignored) {
         } catch (Throwable e1) {
             throw new DAOException(e1);
         }

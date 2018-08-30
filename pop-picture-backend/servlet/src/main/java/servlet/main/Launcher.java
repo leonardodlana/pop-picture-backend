@@ -125,7 +125,7 @@ public class Launcher {
 
     static {
         LOGGER = new SysoutLogger();
-        AppEnvironment.setCurrent(AppEnvironment.DEV);
+        AppEnvironment.setCurrent(AppEnvironment.PROD);
     }
 
     /**
